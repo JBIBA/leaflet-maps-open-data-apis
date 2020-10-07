@@ -129,15 +129,15 @@
       Each point is a custom .png icon with a tooltip containing hospital's name,
       city, and zipcode.
     */
-    $.getJSON("https://data.medicare.gov/resource/xubh-q36u.geojson?state=ND", function(data) {
+    $.getJSON("https://opendata.arcgis.com/datasets/a4d813c396934fc09d0b801a0c491852_0.geojson", function(data) {
 
       var hospitals = L.geoJson(data, {
         pointToLayer: function(feature, latlng) {
           return L.marker(latlng, {
             icon: L.icon({
               iconUrl: 'images/hospital.png',
-              iconSize: [24, 24],
-              iconAnchor: [12, 12],
+              iconSize: [30, 30],
+              iconAnchor: [18, 18],
               opacity: 0.5
             })
           }).bindTooltip(
